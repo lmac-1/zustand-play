@@ -1,11 +1,15 @@
-import { Column } from "./column";
+import { Column } from './column';
+import NewTodoDialog from './new-todo-dialog';
 
 export const Columns = () => {
   return (
-    <section className="flex mt-10 gap-6 lg:gap-12">
-      <Column title="Todo" status="TODO" />
-      <Column title="In progress" status="IN_PROGRESS" />
-      <Column title="Done" status="DONE" />
-    </section>
+    <div>
+      <NewTodoDialog />
+      <section className='mt-10 flex gap-6 lg:gap-12'>
+        <Column title='Todo' status='TODO' />
+        <Column title='In progress' status='IN_PROGRESS' />
+        <Column title='Done' status='DONE' />
+      </section>
+    </div>
   );
 };

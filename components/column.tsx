@@ -10,6 +10,7 @@ export const Column = ({
   title: string;
   status: string;
 }) => {
+  // When we use useTaskStore, it needs to be a client component
   const tasks = useTaskStore(state => state.tasks);
 
   // useMemo means that we only recalculate the filtered tasks when the tasks or status changes
