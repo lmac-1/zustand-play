@@ -16,6 +16,7 @@ import { Textarea } from './ui/textarea';
 import { useTaskStore } from '@/lib/store';
 
 export default function NewTodoDialog() {
+  // returns our add task function from our store
   const addTask = useTaskStore(state => state.addTask);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -27,6 +28,7 @@ export default function NewTodoDialog() {
 
     if (typeof title !== 'string' || typeof description !== 'string') return;
 
+    // this successfully carries out our addTask action
     addTask(title, description);
   };
 
