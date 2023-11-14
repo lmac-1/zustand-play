@@ -1,5 +1,5 @@
 'use client';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Status, useTaskStore } from '@/lib/store';
 import { Task } from './task';
 
@@ -22,6 +22,11 @@ export const Column = ({
   const updateTask = useTaskStore(state => state.updateTask);
   const draggedTask = useTaskStore(state => state.draggedTask);
   const dragTask = useTaskStore(state => state.dragTask);
+
+  useEffect(() => {
+    // This will hydrate the component once mounted on the UI
+    useTaskStore.persist.rehydrate();
+  }, []);
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     if (!draggedTask) return;

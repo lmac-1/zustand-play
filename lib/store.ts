@@ -48,6 +48,12 @@ export const useTaskStore = create<State & Actions>()(
           )
         }))
     }),
-    { name: 'task-store' }
+    {
+      name: 'task-store',
+      // we are storing our tasks in local storage so we want to skip hydration
+      // otherwise the UI sent from the server will be different from the UI on the client side
+      // so we will hydrate on the client side
+      skipHydration: true
+    }
   )
 );
