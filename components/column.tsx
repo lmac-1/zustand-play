@@ -34,8 +34,10 @@ export const Column = ({
     dragTask(null);
   };
   return (
-    <section className='h-[600px] flex-1'>
-      <h2 className='font-2xl ml-1 font-bold text-white'>{title}</h2>
+    <section className='h-[500px] flex-1'>
+      <h2 className='text-center text-2xl font-semibold uppercase tracking-widest text-white/90'>
+        {title}
+      </h2>
       <div
         className='mt-3.5 h-full w-full rounded-xl bg-white/50 p-4'
         onDrop={handleDrop}
