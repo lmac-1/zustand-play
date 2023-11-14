@@ -42,9 +42,11 @@ export const Column = ({
         // disable the default behaviour
         onDragOver={e => e.preventDefault()}
       >
-        {filteredTasks.map(task => (
-          <Task key={task.id} {...task} />
-        ))}
+        <div className='flex flex-col gap-4'>
+          {filteredTasks.map(task => (
+            <Task key={task.id} {...task} />
+          ))}
+        </div>
       </div>
     </section>
   );
